@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas style="border:1px solid #000000;" id="rectangle" width="200" height="100"></canvas>
+    <canvas style="border:1px solid #000000;" id="line" width="200" height="100"></canvas>
+    <canvas style="border:1px solid #000000;" id="circle" width="200" height="100"></canvas>
+</body>
+<script>
+    // RECTANLGE
+
+    // Find the Canvas Element
+    var canvas = document.getElementById("rectangle");
+    // Create a Drawing Object
+    var ctx = canvas.getContext("2d");
+
+    // Draw on the Canvas
+    ctx.fillStyle = "#FF0000"; // style
+    ctx.fillRect(0,0,200,100); // Method draw rectangle
+
+    // LINE
+    var line = document.getElementById("line");
+    var lineCtx = line.getContext("2d");
+    // Starting point
+    lineCtx.moveTo(0,0);
+    // Ending point
+    lineCtx.lineTo(200,100);
+    // Actually draw the line
+    lineCtx.stroke();
+
+    // CIRCLE
+    /*
+     * arc(x,y,r,startangle,endangle) - creates an arc/curve. To create a circle with 
+       arc(): Set start angle to 0 and end angle to 2*Math.PI. The x and y parameters define
+      the x- and y-coordinates of the center of the circle. The r parameter defines the radius of the circle.
+    */
+    var circle = document.getElementById("circle");
+    var circleCtx = circle.getContext("2d");
+    circleCtx.beginPath();
+    circleCtx.arc(95,50,40,0,2*Math.PI);
+    circleCtx.stroke();
+</script>
+</html>
